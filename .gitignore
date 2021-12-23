@@ -106,4 +106,4 @@ typings/
 .DS_Store
 
 # Distribution
-dist/
+# dist/
