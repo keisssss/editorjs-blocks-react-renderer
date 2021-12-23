@@ -66,15 +66,13 @@ const Blocks = ({
     ...renderers,
   };
 
-  const hasBlockId = data.version.includes('2.21');
-
   return (
     <>
       {data.blocks.map((block, i) => {
         if (block.type.toString() in availableRenderers) {
           // @ts-ignore Todo: find a fix
           const Tag = availableRenderers[block.type];
-          return <Tag key={hasBlockId && block.id ? block.id : i} data={block.data} {...config[block.type]} />;
+          return <Tag key={block.id ? block.id : i} data={block.data} {...config[block.type]} />;
         }
       })}
     </>
